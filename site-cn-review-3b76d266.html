@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南宫28 · 站点介绍与可信说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafbfc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e293b;
+      line-height: 1.7;
+      padding: 2rem 1.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* 主视觉卡片 */
+    .hero-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.02);
+      margin-bottom: 2.2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .hero-card h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+      color: #0f172a;
+    }
+
+    .hero-card .sub {
+      font-size: 1rem;
+      color: #64748b;
+      margin-bottom: 1.2rem;
+      border-left: 4px solid #94a3b8;
+      padding-left: 1rem;
+    }
+
+    .hero-card p {
+      color: #334155;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card .tagline {
+      display: inline-block;
+      background: #f1f5f9;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #1e293b;
+      letter-spacing: 0.3px;
+      margin-top: 0.5rem;
+    }
+
+    /* 卡片网格：用途与适合人群混合 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.02);
+      border: 1px solid #edf2f7;
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .card h2 small {
+      font-weight: 400;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      letter-spacing: 0.5px;
+      margin-left: auto;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card ul li {
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .card ul li::before {
+      content: "·";
+      color: #64748b;
+      font-weight: 700;
+      margin-right: 0.2rem;
+    }
+
+    .card p {
+      color: #334155;
+      margin-bottom: 0.5rem;
+    }
+
+    .card .muted {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    /* 自然链接段落卡片 */
+    .link-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.03);
+      border: 1px solid #edf2f7;
+    }
+
+    .link-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .link-card p {
+      color: #334155;
+      margin-bottom: 0.8rem;
+    }
+
+    .link-card a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .link-card a:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.6rem 1.8rem;
+      border: 1px solid #edf2f7;
+      margin-bottom: 2rem;
+    }
+
+    .faq-summary h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+    }
+
+    .faq-summary details {
+      margin-bottom: 0.4rem;
+      border-bottom: 1px solid #f1f5f9;
+      padding: 0.5rem 0;
+    }
+
+    .faq-summary summary {
+      font-weight: 500;
+      cursor: pointer;
+      color: #1e293b;
+      padding: 0.2rem 0;
+      transition: color 0.15s;
+    }
+
+    .faq-summary summary:hover {
+      color: #2563eb;
+    }
+
+    .faq-summary details p {
+      margin: 0.5rem 0 0.3rem 0;
+      color: #475569;
+      font-size: 0.95rem;
+      padding-left: 0.4rem;
+    }
+
+    /* 页脚 */
+    .footer-note {
+      border-top: 1px solid #e9eef3;
+      padding-top: 1.5rem;
+      margin-top: 0.8rem;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+
+    .footer-note a {
+      color: #475569;
+      text-decoration: none;
+      border-bottom: 1px dashed #cbd5e1;
+    }
+
+    .footer-note a:hover {
+      color: #0f172a;
+      border-bottom-color: #0f172a;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 500px) {
+      body {
+        padding: 1.2rem 1rem 3rem;
+      }
+      .hero-card {
+        padding: 1.8rem 1.2rem;
+      }
+      .hero-card h1 {
+        font-size: 1.6rem;
+      }
+      .card {
+        padding: 1.2rem 1.2rem;
+      }
+      .link-card {
+        padding: 1.2rem 1.2rem;
+      }
+      .faq-summary {
+        padding: 1.2rem 1.2rem;
+      }
+      .card-grid {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- 主视觉卡片 -->
+    <div class="hero-card">
+      <h1>南宫28</h1>
+      <div class="sub">一个值得花几分钟了解的信息站点</div>
+      <p>
+        无论你是第一次听到这个名字，还是早已熟悉，这里都尝试用平实的方式介绍<strong>南宫28</strong>所提供的内容方向、信息结构以及它适合怎样的人。我们不讲故事，只说明白。
+      </p>
+      <p>
+        整个站点的设计围绕「清晰」和「实用」展开，没有繁复的修饰，内容分类明确，你可以快速找到自己关心的部分。
+      </p>
+      <span class="tagline">信息卡片 · 直接 · 无负担</span>
+    </div>
+
+    <!-- 用途卡片 + 适合人群（组合网格） -->
+    <div class="card-grid">
+
+      <div class="card">
+        <h2>📌 主要用途 <small>可以做什么</small></h2>
+        <ul>
+          <li>浏览经过整理的主题资料与常见问题</li>
+          <li>了解平台功能模块及各自侧重</li>
+          <li>查看分类索引，快速定位兴趣内容</li>
+          <li>获得相对完整的站点导览，减少盲目点击</li>
+        </ul>
+        <p class="muted" style="margin-top: 0.8rem;">每个板块都有独立的介绍，结构一目了然。</p>
+      </div>
+
+      <div class="card">
+        <h2>👥 适合人群 <small>谁会更需要它</small></h2>
+        <ul>
+          <li>希望系统了解南宫28内容框架的新访客</li>
+          <li>需要快速查找某个功能或说明的老用户</li>
+          <li>对信息组织方式有要求、不喜欢碎片阅读的人</li>
+          <li>想要一个干净入口、不被无关信息干扰的使用者</li>
+        </ul>
+        <p class="muted" style="margin-top: 0.8rem;">不论使用频率高低，都能找到适合自己的节奏。</p>
+      </div>
+
+    </div>
+
+    <!-- 自然链接段落（嵌入引用） -->
+    <div class="link-card">
+      <h3>关于站点本身</h3>
+      <p>
+        这个网站并不是一个社区论坛，也不是博客，它更像一个「信息基点」——把与<strong>南宫28</strong>相关的脉络、模块和常见疑问收拢在一起。如果你此前只是零散地接触过某些部分，那么通过这里可以更快地建立整体印象。
+      </p>
+      <p>
+        站点没有多余的弹窗或强制引导，你可以在任何页面自由跳转。我们推荐从首页开始，逐步了解各个卡片所代表的区域。若想直接浏览核心内容，可以访问 <a href="https://site-cn-ng28.com">南宫28</a> 的主页，那里列出了最常被问到的主题与入口。
+      </p>
+      <p style="margin-bottom: 0;">
+        保持简洁一直是我们优先考虑的事——无论是页面布局还是信息密度。你不需要注册或登录就能看到绝大多数内容。
+      </p>
+    </div>
+
+    <!-- FAQ 摘要（不是完整FAQ，只是节选） -->
+    <div class="faq-summary">
+      <h4>常见疑问摘要</h4>
+
+      <details>
+        <summary>这个站点主要提供什么？</summary>
+        <p>南宫28 将分散的信息整理为卡片、列表和简短说明，方便快速浏览与查找。它不包含第三方广告或推广内容。</p>
+      </details>
+
+      <details>
+        <summary>内容更新频率如何？</summary>
+        <p>不定期根据实际需要补充或调整卡片内容。没有固定日程，但每次变化都会保持结构一致。</p>
+      </details>
+
+      <details>
+        <summary>移动设备上体验怎么样？</summary>
+        <p>页面采用窄正文宽度与响应式设计，手机和平板都能获得舒适的阅读体验，卡片会自动适配屏幕。</p>
+      </details>
+
+      <details>
+        <summary>是否有必要收藏这个站点？</summary>
+        <p>如果你觉得当前信息对你有帮助，或者以后可能再次参考，可以把它加入书签。它不会频繁改变结构。</p>
+      </details>
+
+    </div>
+
+    <!-- 页脚（也可包含链接，但不用“进入/点击”等词） -->
+    <div class="footer-note">
+      <span>更多内容请直接浏览 <a href="https://site-cn-ng28.com">南宫28</a> · 页面版本 2025</span>
+    </div>
+
+  </div>
+</body>
+</html>
